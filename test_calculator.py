@@ -31,3 +31,17 @@ def test_fac_float():
     with pytest.raises(Exception) as f: #Controlling that Exeption is raised when x=float
         assert calculator.fac(1/2) and calculator.fac(2.5)
     assert str(f.value)=='Float is not valid' 
+
+#Exercise 4.2
+def test_sin_tol():
+    tol=1e-5
+    assert abs(calculator.sin(0,5)-mt.sin(0))<tol and abs(calculator.sin(0,5))<tol
+    assert abs(calculator.sin(mt.pi/2,5)-mt.sin(mt.pi/2))<tol and abs(calculator.sin(mt.pi/2,5)-1)<tol
+def test_sin_neg():
+    with pytest.raises(Exception) as e:
+        assert calculator.sin(-1,5) and calculator.sin(-mt.pi/2,5)
+    assert str(e.value)=='Sin of negative not defined'
+def test_sin_N():
+    with pytest.raises(Exception) as f:
+        assert calculator.sin(mt.pi/2,0.5)
+    assert str(f.value)=='N can only be positive integer'

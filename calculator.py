@@ -15,3 +15,7 @@ def fac(x):
         for i in range(1,x+1):
             y*=i
         return y
+
+#Exercise 4.2
+def sin(x):
+    pass
