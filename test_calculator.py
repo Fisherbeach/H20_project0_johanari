@@ -18,14 +18,16 @@ def test_add_string():
 
 #Exercise 4.1
 def test_fac_pos_int():
-    assert calculator.fac(1)==1 and calculator.fac(2)==2 and calculator.fac(5)==120
+    assert calculator.fac(1)==1 and calculator.fac(2)==2 and calculator.fac(5)==120 #precalculated values
+    assert calculator.fac(1)==mt.factorial(1) and calculator.fac(2)==mt.factorial(2)\
+        and calculator.fac(5)==mt.factorial(5) #Comparing to factorial function in math library
 def test_fac_zero():
-    assert calculator.fac(0)==1
+    assert calculator.fac(0)==1 #Controlling that the factorial of 0 is equal to 1
 def test_fac_neg_int():
-    with pytest.raises(Exception) as e:
+    with pytest.raises(Exception) as e: #Controlling that Exception is raised for x<0
         assert calculator.fac(-1) and calculator.fac(-3)
     assert str(e.value)=='Factorial of negative not defined'
 def test_fac_float():
-    with pytest.raises(Exception) as f:
+    with pytest.raises(Exception) as f: #Controlling that Exeption is raised when x=float
         assert calculator.fac(1/2) and calculator.fac(2.5)
-    assert str(f.value)=='Float is not valid'
+    assert str(f.value)=='Float is not valid' 
