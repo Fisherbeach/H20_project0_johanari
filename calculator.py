@@ -17,5 +17,15 @@ def fac(x):
         return y
 
 #Exercise 4.2
-def sin(x):
-    pass
+def sin(x,N):
+    if x<0:
+        raise Exception('Sin of negative not defined')
+    elif N<0 or type(N)==float:
+        raise Exception('N can only be positive integer')
+    else:
+        y=0
+        for i in range (N+1):
+            y+=((-1)**i)*(x**(2*i+1)/fac(2*i+1))
+        return y
+        
+    
