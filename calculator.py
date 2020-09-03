@@ -19,9 +19,9 @@ def fac(x):
 #Exercise 4.2
 def sin(x,N):
     if x<0:
-        raise Exception('Sin of negative not defined')
+        raise Exception(f'Sin of negative not defined, X was {x}')
     elif N<0 or type(N)==float:
-        raise Exception('N can only be positive integer')
+        raise Exception(f'N can only be positive integer. N was {N}')
     else:
         y=0
         for i in range (N+1):
@@ -31,9 +31,15 @@ def sin(x,N):
 #Exercise 4.3
 def division(x,y):
     if y==0:
-        raise ValueError
+        raise ZeroDivisionError('division by zero')
     elif type(x)==str or type(y)==str:
-        raise ValueError('x and/or y can only be floats or integers')
+        raise TypeError('scan only concatenate str (not "int") to str')
     else:
         return x/y
+
+#Exercise 4.4
+
+#Exercise 4.5
+
+#Exercise 5
          
