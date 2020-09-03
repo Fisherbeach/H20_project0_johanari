@@ -49,13 +49,12 @@ def test_sin_N():
 #Exercise 4.3
 def test_division_values():
     tol=1e-6
-    for arg, expected_output in [[(2,2),1],[(-2,2),-1],[(-3,-3),1],[(0.1,0.3),0.3333333]]:
-        assert abs(calculator.divide(arg[0],arg[1])-expected_output)<tol
+    for arg, expected_output in [[(2,2),1],[(-2,2),-1],[(-3,-3),1],[(0.1,0.3),0.3333333],[(0,1),0]]:
+        assert abs(calculator.division(arg[0],arg[1])-expected_output)<tol
 def test_division_zero():
     with pytest.raises(ZeroDivisionError) as e:
         assert calculator.division(1/0)
-    assert str(f.value)=='Can not divide by zero'
+    assert str(e.value)=='division by zero'
 def test_division_by_text():
-    with pytest.raises(ValueError) as f:
+    with pytest.raises(TypeError):
         assert calculator.division('yes'/'no')
-    assert str(f.value)=='x,y can only be floats or integers'    

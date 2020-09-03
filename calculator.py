@@ -1,4 +1,4 @@
-c#Exercise 1-3
+#Exercise 1-3
 def add(x,y):
     return x+y
 
@@ -30,6 +30,10 @@ def sin(x,N):
 
 #Exercise 4.3
 def division(x,y):
-    pass
+    if y==0:
+        raise ValueError
+    elif type(x)==str or type(y)==str:
+        raise ValueError('x and/or y can only be floats or integers')
+    else:
+        return x/y
          
-    
