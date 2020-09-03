@@ -19,9 +19,9 @@ def fac(x):
 #Exercise 4.2
 def sin(x,N):
     if x<0:
-        raise Exception(f'Sin of negative not defined, X was {x}')
+        raise Exception(f'Sin of negative not defined')
     elif N<0 or type(N)==float:
-        raise Exception(f'N can only be positive integer. N was {N}')
+        raise Exception(f'N can only be positive integer')
     else:
         y=0
         for i in range (N+1):
