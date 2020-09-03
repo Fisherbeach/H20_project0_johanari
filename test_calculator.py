@@ -74,7 +74,7 @@ def test_division_by_text():
         assert calculator.division('yes'/'no')
 
 #Exercise 4.4
-@pytest.mark.parametrize('x, o', [[(1,1),1], [(1,0),1], [(-2,2),2]])
+@pytest.mark.parametrize('x, o', [[(1,1),1], [(1,0),1], [(-2,2),4],[(0,0),1]])
 def test_x_power_y_value(x, o):
     assert calculator.x_power_y(x[0],x[1])==o
 
@@ -86,6 +86,7 @@ def test_x_power_y_negy(x, o):
 def test_x_power_y_divzero():
     with pytest.raises(ZeroDivisionError) as e:
         assert calculator.x_power_y(0,-1)
+    assert str(e.value)=='division by zero'
 
 #Exercise 5
 def test_add_TypeError():

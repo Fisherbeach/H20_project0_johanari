@@ -39,7 +39,10 @@ def division(x,y):
 
 #Exercise 4.4
 def x_power_y(x,y):
-    pass
+    if x==0 and y<0:
+        raise ZeroDivisionError('division by zero')
+    else:
+        return x**y
 
 #Exercise 4.5
 
