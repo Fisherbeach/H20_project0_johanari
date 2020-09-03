@@ -33,11 +33,13 @@ def division(x,y):
     if y==0:
         raise ZeroDivisionError('division by zero')
     elif type(x)==str or type(y)==str:
-        raise TypeError('scan only concatenate str (not "int") to str')
+        raise TypeError('can only concatenate str (not "int") to str')
     else:
         return x/y
 
 #Exercise 4.4
+def x_power_y(x,y):
+    pass
 
 #Exercise 4.5
 
