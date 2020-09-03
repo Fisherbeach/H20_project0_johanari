@@ -37,14 +37,16 @@ def division(x,y):
     else:
         return x/y
 
-#Exercise 4.4
+#Exercise 4.4 x in the power of y function
 def x_power_y(x,y):
     if x==0 and y<0:
         raise ZeroDivisionError('division by zero')
     else:
         return x**y
 
-#Exercise 4.5
+#Exercise 4.5 absolute value
+def absolute(x):
+    pass
 
 #Exercise 5
          
