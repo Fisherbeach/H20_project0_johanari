@@ -3,7 +3,7 @@ def add(x,y):
     return x+y
 
 #Exercise 4.1
-def fac(x):
+def factorial(x):
     if type(x)==float:
         raise Exception('Float is not valid')
     elif x<0:
@@ -25,7 +25,7 @@ def sin(x,N):
     else:
         y=0
         for i in range (N+1):
-            y+=((-1)**i)*(x**(2*i+1)/fac(2*i+1))
+            y+=((-1)**i)*(x**(2*i+1)/factorial(2*i+1))
         return y
 
 #Exercise 4.3

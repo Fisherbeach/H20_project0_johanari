@@ -21,22 +21,22 @@ def test_add_string():
 #Exercise 4.1
 @pytest.mark.parametrize('x, o', [[1,1],[2,2],[5,120]])
 def test_fac_pos_int(x, o):
-    assert calculator.fac(x)==o #precalculated values
-    assert calculator.fac(x)==mt.factorial(x) #Comparing to factorial function in math library
+    assert calculator.factorial(x)==o #precalculated values
+    assert calculator.factorial(x)==mt.factorial(x) #Comparing to factorial function in math library
 
 def test_fac_zero():
-    assert calculator.fac(0)==1 #Controlling that the factorial of 0 is equal to 1
+    assert calculator.factorial(0)==1 #Controlling that the factorial of 0 is equal to 1
 
 @pytest.mark.parametrize('x',[-1,-3,-10])
 def test_fac_neg_int(x):
     with pytest.raises(Exception) as e: #Controlling that Exception is raised for x<0
-        assert calculator.fac(x)
+        assert calculator.factorial(x)
     assert str(e.value)=='Factorial of negative not defined'
 
 @pytest.mark.parametrize('x',[0.5,2/3,10.1])    
 def test_fac_float(x):
     with pytest.raises(Exception) as f: #Controlling that Exeption is raised when x=float
-        assert calculator.fac(1/2) and calculator.fac(2.5)
+        assert calculator.factorial(1/2) and calculator.factorial(2.5)
     assert str(f.value)=='Float is not valid' 
 
 #Exercise 4.2
