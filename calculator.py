@@ -1,4 +1,4 @@
-#Exercise 1-3
+c#Exercise 1-3
 def add(x,y):
     return x+y
 
@@ -27,5 +27,9 @@ def sin(x,N):
         for i in range (N+1):
             y+=((-1)**i)*(x**(2*i+1)/fac(2*i+1))
         return y
-        
+
+#Exercise 4.3
+def division(x,y):
+    pass
+         
     
