@@ -54,5 +54,5 @@ def absolute(x):
             raise Exception('Could not calculate |x|')
         else:
             return x1
-#Exercise 5
+            
          
