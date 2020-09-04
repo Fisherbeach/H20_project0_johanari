@@ -88,8 +88,20 @@ def test_x_power_y_divzero():
         assert calculator.x_power_y(0,-1)
     assert str(e.value)=='division by zero'
 
+#Exercise 4.5
+@pytest.mark.parametrize('x, o', [[(1*-1),1],[(-4-4),8],[(0.1-0.3),0.2]])
+def test_absolute_value(x,o):
+    tol=1e-6
+    assert abs(calculator.absolute(x)-o)<tol
+    assert calculator.absolute(calculator.absolute(x)-0)<tol
+
+def test_absolute_str():
+    with pytest.raises(ValueError) as e:
+        assert calculator.absolute('hello')
+    assert str(e.value)=='Only numbers allowed'
+
 #Exercise 5
-def test_add_TypeError():
+def test_add_typeerror():
     with pytest.raises(TypeError) as e:
         assert calculator.add('yes',1)
     assert str(e.value)=='can only concatenate str (not "int") to str' #Also checking if the output is correct
