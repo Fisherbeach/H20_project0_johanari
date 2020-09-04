@@ -46,7 +46,13 @@ def x_power_y(x,y):
 
 #Exercise 4.5 absolute value
 def absolute(x):
-    pass
-
+    if type(x)==str:
+        raise ValueError('Only numbers allowed')
+    else:
+        x1=(x**2)**0.5
+        if x1<0:
+            raise Exception('Could not calculate |x|')
+        else:
+            return x1
 #Exercise 5
          

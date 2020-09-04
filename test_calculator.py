@@ -89,11 +89,11 @@ def test_x_power_y_divzero():
     assert str(e.value)=='division by zero'
 
 #Exercise 4.5
-@pytest.mark.parametrize('x, o', [[(1*-1),1],[(-4-4),8],[(0.1-0.3),0.2]])
+@pytest.mark.parametrize('x, o', [[1*-1,1],[-4-4,8],[0.1-0.3,0.2]])
 def test_absolute_value(x,o):
     tol=1e-6
-    assert abs(calculator.absolute(x)-o)<tol
-    assert calculator.absolute(calculator.absolute(x)-0)<tol
+    assert abs(calculator.absolute(x)-o)<tol #Checking if it is correct in terms of value
+    assert calculator.absolute(calculator.absolute(x)-o)<tol #Checking if the function itself can be used for checks
 
 def test_absolute_str():
     with pytest.raises(ValueError) as e:
